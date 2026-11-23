@@ -16,7 +16,7 @@
 <meta name="theme-color" content="#24211d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..900&family=Literata:ital,opsz,wght@1,7..72,400;1,7..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..900&family=Noto+Serif:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ash:   #eceae6;   /* page — the grey of the studio backdrop */
@@ -32,7 +32,7 @@
     --accent-deep: var(--moss-deep);
 
     --f-sans: 'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --f-serif: 'Literata', Georgia, serif;
+    --f-serif: 'Noto Serif', Georgia, 'Times New Roman', serif;
     --wrap: 1200px;
     --gut: clamp(20px, 5vw, 64px);
     --head-h: 76px;
@@ -51,6 +51,11 @@
   img{ max-width:100%; }
   :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
   button{ font: inherit; color: inherit; }
+
+  /* formal serif for running text */
+  main p, main li, main dd{ font-family: var(--f-serif); }
+  main p.sku, main li strong, .steps strong{ font-family: var(--f-sans); }
+  .description, .content-section p{ line-height: 1.75; }
 
   /* ---------- Header ---------- */
   header{
@@ -107,7 +112,7 @@
   }
   .intro{
     margin:0; max-width: 30ch;
-    font-family: var(--f-serif); font-style: italic; font-weight: 400;
+    font-family: var(--f-serif); font-weight: 400;
     font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.45; color: var(--char);
   }
   .buttons{ display:flex; gap: 14px; flex-wrap:wrap; }
@@ -193,6 +198,28 @@
     .product-card{ grid-column: 1 / -1; }
   }
 
+  /* Bulk */
+  .products-subtitle{
+    margin: clamp(56px, 9vh, 96px) 0 24px; padding-top: 28px; border-top: 1px solid var(--stone);
+    font-weight: 850; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1; letter-spacing: -0.035em;
+  }
+  .products-grid.bulk-grid .product-card{ grid-column: span 3; --accent: var(--moss); --accent-deep: var(--moss-deep); }
+  .bulk-card .product-media{ aspect-ratio: 4 / 3; }
+  .bulk-card .product-card-body{ padding: 18px 20px 22px; gap: 6px; }
+  .bulk-card .product-card-body h3{ font-size: 1.05rem; font-weight: 650; letter-spacing: -0.01em; }
+  .product-card-body p.bulk-figure{
+    font-family: var(--f-sans); font-weight: 850; font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1;
+    letter-spacing: -0.035em; color: var(--char); font-variant-numeric: tabular-nums; margin: 4px 0 2px;
+  }
+  .bulk-media{ aspect-ratio: 4 / 3; border-radius: 18px; overflow:hidden; border: 1px solid var(--stone); }
+  .bulk-media svg{ display:block; width:100%; height:100%; }
+  .product-main .buttons{ align-items:center; margin-top: 8px; }
+  .product-main .buttons .back-link{ margin: 0; }
+  @media (max-width: 1000px){ .products-grid.bulk-grid .product-card{ grid-column: span 6; } }
+  @media (max-width: 560px){ .products-grid.bulk-grid .product-card{ grid-column: 1 / -1; } }
+  .t-box{ fill: #c9b49b; stroke: #7a6249; stroke-width: 1.2; }
+  .t-pallet{ fill: #9c8466; }
+
   /* SVG thumbs */
   .t-bg{ fill: #dcd9d3; }
   .t-body{ fill: #c9b49b; }
@@ -225,14 +252,14 @@
     margin: 0 0 14px; font-weight: 850; font-size: clamp(2.6rem, 6vw, 4.6rem);
     line-height: .95; letter-spacing: -0.04em; text-wrap: balance;
   }
-  .tagline{ margin: 0 0 18px; font-family: var(--f-serif); font-style: italic; font-size: 1.35rem; color: var(--accent-deep); }
+  .tagline{ margin: 0 0 18px; font-family: var(--f-serif); font-weight: 500; font-size: 1.25rem; color: var(--accent-deep); }
   .sku{
     display:inline-block; justify-self:start; margin: 0 0 32px; padding: 5px 12px; border-radius: 6px;
     background: rgba(36,33,29,.06); font-size: .85rem; font-weight: 550; color: var(--bark); font-variant-numeric: tabular-nums;
   }
   .lede{
     margin: 0 0 18px; max-width: 26ch;
-    font-family: var(--f-serif); font-style: italic; font-weight: 500;
+    font-family: var(--f-serif); font-weight: 500;
     font-size: clamp(1.5rem, 2.6vw, 2.05rem); line-height: 1.25; color: var(--char);
   }
   .description{ margin: 0 0 48px; max-width: 58ch; font-size: 1.07rem; line-height: 1.72; color: #3b352f; }
@@ -317,7 +344,7 @@
 
   /* ---------- Contact ---------- */
   #view-epikoinonia .product-main{ max-width: 860px; }
-  #view-epikoinonia .description{ font-family: var(--f-serif); font-style: italic; font-size: 1.35rem; line-height: 1.45; max-width: 34ch; color: var(--char); }
+  #view-epikoinonia .description{ font-family: var(--f-serif); font-size: 1.25rem; line-height: 1.45; max-width: 34ch; color: var(--char); }
   #view-epikoinonia .spec-section{ padding: 8px 28px; border-radius: 18px; background: var(--paper); border: 1px solid var(--stone); }
   #view-epikoinonia .spec-list{ border-top: none; }
   #view-epikoinonia .spec-row:last-child{ border-bottom: none; }
@@ -444,6 +471,50 @@
       </button>
 
     </div>
+
+    <h2 class="products-subtitle">Bulk</h2>
+    <div class="products-grid bulk-grid">
+      <button class="product-card bulk-card" data-nav="proion-b1">
+        <div class="product-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="226" rx="120" ry="12" fill="#000" opacity=".08"/><rect class="t-box" x="110" y="150" width="42" height="70" rx="4"/><rect class="t-box" x="156" y="150" width="42" height="70" rx="4"/><rect class="t-box" x="202" y="150" width="42" height="70" rx="4"/><rect class="t-box" x="248" y="150" width="42" height="70" rx="4"/></svg></div>
+        <div class="product-card-body">
+          <h3>Μπρικέτα <span class="card-brand">Easy-Break™</span> (Bulk)</h3>
+          <p class="bulk-figure">32 kg</p>
+          <p>4 πακέτα των 8 kg</p>
+          <span class="card-link">Δείτε το προϊόν →</span>
+        </div>
+      </button>
+
+      <button class="product-card bulk-card" data-nav="proion-b2">
+        <div class="product-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="234" rx="140" ry="10" fill="#000" opacity=".08"/><rect class="t-box" x="88" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="144" width="26" height="20" rx="2"/><rect class="t-pallet" x="80" y="210" width="240" height="8"/><rect class="t-pallet" x="86" y="218" width="18" height="12"/><rect class="t-pallet" x="191" y="218" width="18" height="12"/><rect class="t-pallet" x="296" y="218" width="18" height="12"/></svg></div>
+        <div class="product-card-body">
+          <h3>Μπρικέτα <span class="card-brand">Easy-Break™</span> (Bulk)</h3>
+          <p class="bulk-figure">240 kg</p>
+          <p>Παλέτα, 30 πακέτα των 8 kg<br>Παράδοση στο πεζοδρόμιο</p>
+          <span class="card-link">Δείτε το προϊόν →</span>
+        </div>
+      </button>
+
+      <button class="product-card bulk-card" data-nav="proion-b3">
+        <div class="product-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="234" rx="140" ry="10" fill="#000" opacity=".08"/><rect class="t-box" x="88" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="100" width="26" height="20" rx="2"/><rect class="t-pallet" x="80" y="210" width="240" height="8"/><rect class="t-pallet" x="86" y="218" width="18" height="12"/><rect class="t-pallet" x="191" y="218" width="18" height="12"/><rect class="t-pallet" x="296" y="218" width="18" height="12"/></svg></div>
+        <div class="product-card-body">
+          <h3>Μπρικέτα <span class="card-brand">Easy-Break™</span> (Bulk)</h3>
+          <p class="bulk-figure">496 kg</p>
+          <p>Παλέτα, 62 πακέτα των 8 kg<br>Παράδοση στο πεζοδρόμιο</p>
+          <span class="card-link">Δείτε το προϊόν →</span>
+        </div>
+      </button>
+
+      <button class="product-card bulk-card" data-nav="proion-b4">
+        <div class="product-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="234" rx="140" ry="10" fill="#000" opacity=".08"/><rect class="t-box" x="88" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="56" width="26" height="20" rx="2"/><rect class="t-pallet" x="80" y="210" width="240" height="8"/><rect class="t-pallet" x="86" y="218" width="18" height="12"/><rect class="t-pallet" x="191" y="218" width="18" height="12"/><rect class="t-pallet" x="296" y="218" width="18" height="12"/></svg></div>
+        <div class="product-card-body">
+          <h3>Μπρικέτα <span class="card-brand">Easy-Break™</span> (Bulk)</h3>
+          <p class="bulk-figure">960 kg</p>
+          <p>Παλέτα, 120 πακέτα των 8 kg<br>Παράδοση στο πεζοδρόμιο</p>
+          <span class="card-link">Δείτε το προϊόν →</span>
+        </div>
+      </button>
+
+    </div>
   </main>
 </div>
 
@@ -469,8 +540,9 @@
       <h2>Χαρακτηριστικά</h2>
       <ul>
         <li><strong>Προέλευση:</strong> ξυλώδης βιομάζα</li>
-        <li><strong>Διάμετρος / Μήκος:</strong> ~10 cm / ~23 cm</li>
-        <li><strong>Βάρος:</strong> ~2 kg ανά τεμάχιο</li>
+        <li><strong>Διάμετρος / Μήκος:</strong> ~10 cm / ~31 cm</li>
+        <li><strong>Βάρος:</strong> ~2,7 kg ανά τεμάχιο</li>
+        <li><strong>Διαστάσεις πακέτου:</strong> 32 × 31 × 10 cm</li>
         <li><strong>Υγρασία:</strong> < 12%</li>
         <li><strong>Θερμογόνος δύναμη:</strong> ~18 MJ/kg</li>
       </ul>
@@ -483,7 +555,9 @@
         <div class="spec-row"><dt>Εμπορική ονομασία</dt><dd>Easy-Break™</dd></div>
         <div class="spec-row"><dt>Προέλευση / πρώτη ύλη</dt><dd>100% φυσική ξυλώδης βιομάζα (κλαδιά και καθαρό ξύλο – ξυλώδη φυτικά υπολείμματα, χωρίς χημικά πρόσθετα ή συνδετικά υλικά)</dd></div>
         <div class="spec-row"><dt>Καθαρό βάρος</dt><dd>8 kg ℮</dd></div>
-        <div class="spec-row"><dt>Διαστάσεις</dt><dd>Διάμετρος ⌀ 10 cm | Μήκος: περίπου 23 cm</dd></div>
+        <div class="spec-row"><dt>Διαστάσεις</dt><dd>Διάμετρος ⌀ 10 cm | Μήκος: περίπου 31 cm</dd></div>
+        <div class="spec-row"><dt>Βάρος τεμαχίου</dt><dd>~2,7 kg</dd></div>
+        <div class="spec-row"><dt>Διαστάσεις πακέτου</dt><dd>32 × 31 × 10 cm</dd></div>
       </dl>
     </div>
 
@@ -619,6 +693,113 @@
   </main>
 </div>
 
+<div class="view" id="view-proion-b1">
+  <main class="product-main has-media">
+    <button class="back-link" data-nav="proionta">← Πίσω στα προϊόντα</button>
+    <div class="product-media-col">
+      <div class="bulk-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="226" rx="120" ry="12" fill="#000" opacity=".08"/><rect class="t-box" x="110" y="150" width="42" height="70" rx="4"/><rect class="t-box" x="156" y="150" width="42" height="70" rx="4"/><rect class="t-box" x="202" y="150" width="42" height="70" rx="4"/><rect class="t-box" x="248" y="150" width="42" height="70" rx="4"/></svg></div>
+    </div>
+    <h1>Μπρικέτα <span style="white-space:nowrap">Easy-Break™</span> (Bulk)</h1>
+    <p class="tagline">32 kg – 4 πακέτα</p>
+
+    <div class="spec-section">
+      <h2>Στοιχεία παραγγελίας</h2>
+      <dl class="spec-list">
+        <div class="spec-row"><dt>Προϊόν</dt><dd>Μπρικέτα Easy-Break™</dd></div>
+        <div class="spec-row"><dt>Συσκευασία</dt><dd>4 πακέτα των 8 kg</dd></div>
+        <div class="spec-row"><dt>Συνολικό βάρος</dt><dd>32 kg</dd></div>
+        <div class="spec-row"><dt>Διαστάσεις πακέτου</dt><dd>32 × 31 × 10 cm</dd></div>
+      </dl>
+    </div>
+
+    <div class="buttons">
+      <a class="btn-buy" href="mailto:alt.biomass@gmail.com?subject=Easy-Break%E2%84%A2%20(Bulk)%2032%20kg">Στείλτε email</a>
+      <button class="back-link bulk-specs-link" data-nav="proion-1">Τεχνικά στοιχεία της μπρικέτας</button>
+    </div>
+  </main>
+</div>
+
+<div class="view" id="view-proion-b2">
+  <main class="product-main has-media">
+    <button class="back-link" data-nav="proionta">← Πίσω στα προϊόντα</button>
+    <div class="product-media-col">
+      <div class="bulk-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="234" rx="140" ry="10" fill="#000" opacity=".08"/><rect class="t-box" x="88" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="144" width="26" height="20" rx="2"/><rect class="t-pallet" x="80" y="210" width="240" height="8"/><rect class="t-pallet" x="86" y="218" width="18" height="12"/><rect class="t-pallet" x="191" y="218" width="18" height="12"/><rect class="t-pallet" x="296" y="218" width="18" height="12"/></svg></div>
+    </div>
+    <h1>Μπρικέτα <span style="white-space:nowrap">Easy-Break™</span> (Bulk)</h1>
+    <p class="tagline">240 kg – Παλέτα – 30 πακέτα</p>
+
+    <div class="spec-section">
+      <h2>Στοιχεία παραγγελίας</h2>
+      <dl class="spec-list">
+        <div class="spec-row"><dt>Προϊόν</dt><dd>Μπρικέτα Easy-Break™</dd></div>
+        <div class="spec-row"><dt>Συσκευασία</dt><dd>Παλέτα – 30 πακέτα των 8 kg</dd></div>
+        <div class="spec-row"><dt>Συνολικό βάρος</dt><dd>240 kg</dd></div>
+        <div class="spec-row"><dt>Διαστάσεις πακέτου</dt><dd>32 × 31 × 10 cm</dd></div>
+        <div class="spec-row"><dt>Παράδοση</dt><dd>Στο πεζοδρόμιο</dd></div>
+      </dl>
+    </div>
+
+    <div class="buttons">
+      <a class="btn-buy" href="mailto:alt.biomass@gmail.com?subject=Easy-Break%E2%84%A2%20(Bulk)%20240%20kg">Στείλτε email</a>
+      <button class="back-link bulk-specs-link" data-nav="proion-1">Τεχνικά στοιχεία της μπρικέτας</button>
+    </div>
+  </main>
+</div>
+
+<div class="view" id="view-proion-b3">
+  <main class="product-main has-media">
+    <button class="back-link" data-nav="proionta">← Πίσω στα προϊόντα</button>
+    <div class="product-media-col">
+      <div class="bulk-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="234" rx="140" ry="10" fill="#000" opacity=".08"/><rect class="t-box" x="88" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="100" width="26" height="20" rx="2"/><rect class="t-pallet" x="80" y="210" width="240" height="8"/><rect class="t-pallet" x="86" y="218" width="18" height="12"/><rect class="t-pallet" x="191" y="218" width="18" height="12"/><rect class="t-pallet" x="296" y="218" width="18" height="12"/></svg></div>
+    </div>
+    <h1>Μπρικέτα <span style="white-space:nowrap">Easy-Break™</span> (Bulk)</h1>
+    <p class="tagline">496 kg – Παλέτα – 62 πακέτα</p>
+
+    <div class="spec-section">
+      <h2>Στοιχεία παραγγελίας</h2>
+      <dl class="spec-list">
+        <div class="spec-row"><dt>Προϊόν</dt><dd>Μπρικέτα Easy-Break™</dd></div>
+        <div class="spec-row"><dt>Συσκευασία</dt><dd>Παλέτα – 62 πακέτα των 8 kg</dd></div>
+        <div class="spec-row"><dt>Συνολικό βάρος</dt><dd>496 kg</dd></div>
+        <div class="spec-row"><dt>Διαστάσεις πακέτου</dt><dd>32 × 31 × 10 cm</dd></div>
+        <div class="spec-row"><dt>Παράδοση</dt><dd>Στο πεζοδρόμιο</dd></div>
+      </dl>
+    </div>
+
+    <div class="buttons">
+      <a class="btn-buy" href="mailto:alt.biomass@gmail.com?subject=Easy-Break%E2%84%A2%20(Bulk)%20496%20kg">Στείλτε email</a>
+      <button class="back-link bulk-specs-link" data-nav="proion-1">Τεχνικά στοιχεία της μπρικέτας</button>
+    </div>
+  </main>
+</div>
+
+<div class="view" id="view-proion-b4">
+  <main class="product-main has-media">
+    <button class="back-link" data-nav="proionta">← Πίσω στα προϊόντα</button>
+    <div class="product-media-col">
+      <div class="bulk-media"><svg class="product-thumb" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect class="t-bg" width="400" height="300"/><ellipse cx="200" cy="234" rx="140" ry="10" fill="#000" opacity=".08"/><rect class="t-box" x="88" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="188" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="166" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="144" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="122" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="100" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="78" width="26" height="20" rx="2"/><rect class="t-box" x="88" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="116" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="144" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="172" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="200" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="228" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="256" y="56" width="26" height="20" rx="2"/><rect class="t-box" x="284" y="56" width="26" height="20" rx="2"/><rect class="t-pallet" x="80" y="210" width="240" height="8"/><rect class="t-pallet" x="86" y="218" width="18" height="12"/><rect class="t-pallet" x="191" y="218" width="18" height="12"/><rect class="t-pallet" x="296" y="218" width="18" height="12"/></svg></div>
+    </div>
+    <h1>Μπρικέτα <span style="white-space:nowrap">Easy-Break™</span> (Bulk)</h1>
+    <p class="tagline">960 kg – Παλέτα – 120 πακέτα</p>
+
+    <div class="spec-section">
+      <h2>Στοιχεία παραγγελίας</h2>
+      <dl class="spec-list">
+        <div class="spec-row"><dt>Προϊόν</dt><dd>Μπρικέτα Easy-Break™</dd></div>
+        <div class="spec-row"><dt>Συσκευασία</dt><dd>Παλέτα – 120 πακέτα των 8 kg</dd></div>
+        <div class="spec-row"><dt>Συνολικό βάρος</dt><dd>960 kg</dd></div>
+        <div class="spec-row"><dt>Διαστάσεις πακέτου</dt><dd>32 × 31 × 10 cm</dd></div>
+        <div class="spec-row"><dt>Παράδοση</dt><dd>Στο πεζοδρόμιο</dd></div>
+      </dl>
+    </div>
+
+    <div class="buttons">
+      <a class="btn-buy" href="mailto:alt.biomass@gmail.com?subject=Easy-Break%E2%84%A2%20(Bulk)%20960%20kg">Στείλτε email</a>
+      <button class="back-link bulk-specs-link" data-nav="proion-1">Τεχνικά στοιχεία της μπρικέτας</button>
+    </div>
+  </main>
+</div>
+
 <div class="view" id="view-epikoinonia">
   <main class="product-main">
     <button class="back-link" data-nav="home">← Πίσω στην αρχική</button>
@@ -641,7 +822,7 @@
 </div>
 
 <footer>
-  <span class="legal-name">Municipal Solid Waste Green Energy Greece IKE</span>
+  <span class="legal-name">MSW Green Energy Greece IKE</span>
   <span class="contact">
     <a href="mailto:alt.biomass@gmail.com">alt.biomass@gmail.com</a>
     <a href="tel:+306981081647">+30 698 108 1647</a>
@@ -656,6 +837,10 @@
     'proion-2': document.getElementById('view-proion-2'),
     'proion-3': document.getElementById('view-proion-3'),
     'proion-4': document.getElementById('view-proion-4'),
+    'proion-b1': document.getElementById('view-proion-b1'),
+    'proion-b2': document.getElementById('view-proion-b2'),
+    'proion-b3': document.getElementById('view-proion-b3'),
+    'proion-b4': document.getElementById('view-proion-b4'),
     'epikoinonia': document.getElementById('view-epikoinonia'),
   };
   const menuToggle = document.getElementById('menuToggle');
