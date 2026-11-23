@@ -358,6 +358,9 @@
     font-size: .92rem;
   }
   footer .legal-name{ font-weight: 600; color:#fff; }
+  footer .legal-block{ display:flex; flex-direction:column; gap: 4px; }
+  footer .legal-details{ font-size: .82rem; color: #a9a299; font-variant-numeric: tabular-nums; }
+  footer .legal-details span{ margin: 0 6px; color: #6f685f; }
   footer .contact{ display:flex; gap: 24px; flex-wrap:wrap; }
   footer a{ color: #d9d4cc; text-decoration:none; border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom:1px; }
   footer a:hover{ color:#fff; border-color:#fff; }
@@ -810,7 +813,12 @@
 
     <div class="spec-section">
       <dl class="spec-list">
-        <div class="spec-row"><dt>Επωνυμία</dt><dd>MSW Green Energy Greece IKE</dd></div>
+        <div class="spec-row"><dt>Επωνυμία</dt><dd>Municipal Solid Waste Green Energy Greece IKE</dd></div>
+        <div class="spec-row"><dt>Διακριτικός τίτλος</dt><dd>MSW Green Energy Greece IKE</dd></div>
+        <div class="spec-row"><dt>Έδρα</dt><dd>Αγίου Γεωργίου 100, Κορωπί Αττικής</dd></div>
+        <div class="spec-row"><dt>ΑΦΜ</dt><dd>802191946</dd></div>
+        <div class="spec-row"><dt>ΔΟΥ</dt><dd>Κορωπίου</dd></div>
+        <div class="spec-row"><dt>Αρ. ΓΕΜΗ</dt><dd>171800601000</dd></div>
         <div class="spec-row"><dt>Τηλέφωνο</dt><dd><a href="tel:+306981081647" style="color:inherit">+30 698 108 1647</a></dd></div>
         <div class="spec-row"><dt>Email</dt><dd><a href="mailto:alt.biomass@gmail.com" style="color:inherit">alt.biomass@gmail.com</a></dd></div>
         <div class="spec-row"><dt>Τόπος παραγωγής</dt><dd>Κορωπί – Αττική, Ελλάδα</dd></div>
@@ -822,7 +830,10 @@
 </div>
 
 <footer>
-  <span class="legal-name">MSW Green Energy Greece IKE</span>
+  <span class="legal-block">
+    <span class="legal-name">MSW Green Energy Greece IKE</span>
+    <span class="legal-details">Αγίου Γεωργίου 100, Κορωπί Αττικής <span aria-hidden="true">|</span> ΑΦΜ 802191946 <span aria-hidden="true">|</span> ΔΟΥ Κορωπίου <span aria-hidden="true">|</span> Αρ. ΓΕΜΗ 171800601000</span>
+  </span>
   <span class="contact">
     <a href="mailto:alt.biomass@gmail.com">alt.biomass@gmail.com</a>
     <a href="tel:+306981081647">+30 698 108 1647</a>
